@@ -19,7 +19,7 @@ defmodule ZdocsWeb.Router do
 
     get "/", PageController, :home
     resources "/users", UserController
-
+    resources "/docs", DocumentController
   end
 
   # Other scopes may use custom stacks.
@@ -27,6 +27,7 @@ defmodule ZdocsWeb.Router do
     pipe_through :api
 
     resources "/users", UserController, except: [:new, :edit]
+    resources "/docs", DocumentController, except: [:new, :edit]
 
   end
 

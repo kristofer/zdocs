@@ -32,6 +32,10 @@ Start your Phoenix app with:
 
     $ mix phx.server
 
+To migrate changes
+    
+    $ mix ecto.migrate
+
 You can also run your app inside IEx (Interactive Elixir) as:
 
     $ iex -S mix phx.server
