@@ -19,6 +19,7 @@ mix phx.gen.html Admin User users name:string email:string:unique role:string ad
 mix phx.gen.context Publications Document docs title:string description:string public:boolean locator:string source:string
 mix phx.gen.json Publications Document docs title:string description:string public:boolean locator:string source:string --no-context --no-schema
 mix phx.gen.html Publications Document docs title:string description:text public:boolean locator:string source:string --no-context --no-schema
+mix phx.gen.html Publications Document docs title:string description:text public:boolean locator:string source:string 
 
 Some notes on the generated code:
 

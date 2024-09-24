@@ -1,0 +1,27 @@
+<.header>
+  Listing Docs
+  <:actions>
+    <.link href={~p"/docs/new"}>
+      <.button>New Document</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="docs" rows={@docs} row_click={&JS.navigate(~p"/docs/#{&1}")}>
+  <:col :let={document} label="Title"><%= document.title %></:col>
+  <:col :let={document} label="Description"><%= document.description %></:col>
+  <:col :let={document} label="Public"><%= document.public %></:col>
+  <:col :let={document} label="Locator"><%= document.locator %></:col>
+  <:col :let={document} label="Source"><%= document.source %></:col>
+  <:action :let={document}>
+    <div class="sr-only">
+      <.link navigate={~p"/docs/#{document}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/docs/#{document}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={document}>
+    <.link href={~p"/docs/#{document}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

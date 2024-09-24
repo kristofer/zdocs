@@ -21,12 +21,15 @@ defmodule ZdocsWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    resources "/docs", DocumentController
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", ZdocsWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", ZdocsWeb do
+    pipe_through :api
+
+    resources "/docs", DocumentController
+  end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
   if Application.compile_env(:zdocs, :dev_routes) do
